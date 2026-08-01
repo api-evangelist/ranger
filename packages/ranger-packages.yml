@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://registry.npmjs.org/@ranger-testing
+packages:
+- language: javascript
+  registry: npm
+  name: "@ranger-testing/ranger-cli"
+  url: https://www.npmjs.com/package/@ranger-testing/ranger-cli
+  install: npm install -g @ranger-testing/ranger-cli
+  version: 3.1.6
+  official: true
+  description: >-
+    Ranger CLI — sets up your project so your AI coding agent can verify UI
+    features in a real browser, and your team can review results on a shared
+    dashboard. Also installable via `curl -LsSf https://cli.ranger.net/install.sh | sh`.
+- language: javascript
+  registry: npm
+  name: "@ranger-testing/opencode-plugin"
+  url: https://www.npmjs.com/package/@ranger-testing/opencode-plugin
+  install: "included via `ranger setup --opencode`"
+  version: 3.1.6
+  official: true
+  description: Ranger plugin for OpenCode — feature-tracking hooks for AI coding sessions.
+plugins:
+- name: "ranger@trailhead"
+  host: Claude Code plugin marketplace
+  install: installed by `ranger setup` / `ranger setup skills`
+  official: true
+  description: Ranger Claude Code plugin — hooks, skills, and slash commands for feature review.

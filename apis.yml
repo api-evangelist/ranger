@@ -1,8 +1,30 @@
 aid: ranger
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ranger.png
 name: Ranger
-description: Ranger is a company surfaced as a portfolio company of general-catalyst, homebrew and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Ranger is an AI-powered quality-assurance platform that lets coding agents verify
+  their own work in a real browser. Its CLI (@ranger-testing/ranger-cli) sets up a
+  project so an AI coding agent — Claude Code, OpenCode, Cursor, Codex, or any bash-capable
+  agent — can run autonomous end-to-end feature reviews: creating scenarios, driving
+  Chromium, self-maintaining broken tests, auto-scaling parallel browsers, and collecting
+  screenshots, recordings, and traces as evidence, with results reviewed on a shared
+  dashboard. Ranger is agent-native rather than a conventional REST API: it ships a
+  Claude Code plugin (ranger@trailhead), Agent Skills installed to .claude/skills/, slash
+  commands, hooks, and OAuth 2.0 / OpenID Connect authentication (login.ranger.net), with
+  MCP-based auth delegation for managed agent platforms. Backed by General Catalyst and
+  Homebrew.
 url: https://raw.githubusercontent.com/api-evangelist/ranger/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,9 +35,17 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Quality Assurance
+- Testing
+- Browser Automation
+- Artificial Intelligence
+- Agents
+- Developer Tools
+- DevOps
+- CLI
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,5 +53,46 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/ranger-domain-security.yml
 - type: Website
   url: https://www.ranger.net
+- type: DeveloperPortal
+  url: https://docs.ranger.net/
+- type: Documentation
+  url: https://docs.ranger.net/
+- type: GettingStarted
+  url: https://docs.ranger.net/getting-started/quickstart/
+- type: Blog
+  url: https://www.ranger.net/post/why-we-built-a-qa-agent-for-our-background-agent
+- type: Pricing
+  url: https://www.ranger.net/pricing
+- type: Login
+  url: https://login.ranger.net/
+- type: TermsOfService
+  url: https://www.ranger.net/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.ranger.net/privacy-policy
+- type: Support
+  url: mailto:howdy@ranger.net
+- type: Authentication
+  url: authentication/ranger-authentication.yml
+- type: WellKnown
+  url: well-known/ranger-well-known.yml
+- type: Packages
+  url: packages/ranger-packages.yml
+- type: SDKs
+  url: packages/ranger-packages.yml
+- type: CLI
+  url: cli/ranger-cli.yml
+- type: Lifecycle
+  url: lifecycle/ranger-lifecycle.yml
+- type: TrustCenter
+  url: security/ranger-trust-center.yml
+- type: LLMsTxt
+  url: llms/ranger-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1

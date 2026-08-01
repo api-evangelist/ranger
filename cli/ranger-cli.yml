@@ -1,0 +1,71 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.ranger.net/reference/cli-overview/
+name: ranger
+package: "@ranger-testing/ranger-cli"
+install:
+- npm install -g @ranger-testing/ranger-cli
+- "curl -LsSf https://cli.ranger.net/install.sh | sh"
+requires: Node.js >= 18
+authentication:
+  interactive: "ranger setup  (browser login, tokens refresh automatically)"
+  ci_token: "ranger setup <token>  |  RANGER_CLI_TOKEN env var"
+  mcp: "ranger setup --mcp-bootstrap  (RANGER_MCP_AUTH_URL, non-interactive delegation)"
+command_groups:
+- group: setup
+  commands:
+  - ranger setup            # full interactive setup: auth, Chromium, plugin, profile, skills
+  - ranger setup all        # explicit full setup
+  - ranger setup deps       # install Chromium only
+  - ranger setup login      # authenticate only (--token, --mcp)
+  - ranger setup skills     # install Claude Code plugin + skills (--scope user|project, --opencode)
+  - ranger setup profiles   # configure a local browser profile
+  - ranger login            # re-authenticate
+  - ranger status           # version, org, plugin status, skills, profiles
+  - ranger update           # update CLI + refresh installed skills
+  - ranger clean            # remove all Ranger artifacts from the project
+- group: profiles
+  commands:
+  - "ranger profile add <name>"      # --url, --skip-auth, --cdp-endpoint
+  - "ranger profile update <name>"
+  - "ranger profile use <name>"
+  - ranger profile ls
+  - "ranger profile delete <name>"
+  - "ranger profile config set|get|list|unset|reset <profile> [key] [value]"
+  config_keys:
+  - baseUrl
+  - headless
+  - allowInsecureLocalhost
+  - safeMode
+  - userAgent
+  - storageState
+  - cdpEndpoint
+  - loginInstructions
+  - "headers.<name>"
+  - "setupHeaders.<name>"
+- group: feature-review
+  commands:
+  - "ranger create \"<name>\""       # -d description, -c scenarios
+  - ranger list                       # --current-branch
+  - ranger show
+  - "ranger resume <id>"
+  - "ranger add-scenario \"<desc>\""
+  - ranger get-review                 # unaddressed reviewer comments
+  - "ranger report [id]"              # PR markdown w/ screenshots, --json
+  - ranger delete                     # soft delete
+  - "ranger restore <id>"
+- group: verification
+  commands:
+  - "ranger go"                       # --scenario N, --notes, --start-path, --base-url, --profile, --headed
+slash_commands:
+- "/ranger:enable"      # activate Ranger hooks for session and branch
+- "/ranger:disable"     # deactivate Ranger hooks
+- "/ranger"             # invoke the Ranger skill for feature review management
+env_vars:
+- RANGER_CLI_TOKEN
+- RANGER_MCP_AUTH_URL
+- RANGER_BASE_URL
+- RANGER_PROFILE
+- RANGER_HOOKS
+- RANGER_TEST_USERNAME
+- RANGER_TEST_PASSWORD

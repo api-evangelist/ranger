@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.ranger.net/pricing
+url: https://trust.oneleet.com/ranger
+platform: Oneleet Trust Center
+certifications: []
+evidence:
+- source: https://www.ranger.net/pricing
+  kind: trust-center-link
+  detail: >-
+    The pricing page links its "Security / Trust" reference to the Oneleet-hosted
+    trust center at https://trust.oneleet.com/ranger.
+notes: >-
+  Ranger publishes a hosted trust center via Oneleet. The page is a
+  JavaScript-rendered single-page app; specific named certifications (e.g. SOC 2)
+  could not be verified from the static response, so none are asserted here.
+  No `type: Compliance` pointer is emitted without a verified named program.

@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: live fetch of /.well-known/* on Ranger hosts
+hosts:
+- host: https://login.ranger.net
+  documents:
+  - path: /.well-known/openid-configuration        # OpenID Connect discovery
+    status: 200
+    file: ranger-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: ranger-oauth-authorization-server.json
+- host: https://www.ranger.net
+  documents:
+  - path: /.well-known/security.txt                 # RFC 9116
+    status: 404
+  - path: /.well-known/api-catalog                  # RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://docs.ranger.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+notes: >-
+  login.ranger.net is a full OAuth 2.0 / OpenID Connect authorization server
+  (issuer https://login.ranger.net). No security.txt, api-catalog, or ai-plugin
+  document is published on the marketing or docs hosts.

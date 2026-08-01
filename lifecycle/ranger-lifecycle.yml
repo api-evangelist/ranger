@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.ranger.net/
+versioning:
+  cli:
+    scheme: semver
+    current: 3.1.6
+    channel: "alpha pre-releases published on npm (e.g. 3.1.7-alpha.*)"
+  docs:
+    scheme: named-versions
+    current: v2.5
+    sets:
+    - current (v2.5) — recommended for new implementations
+    - alpha (main branch) — pre-release / alpha CLI features
+    - legacy v3.0 (deprecated)
+    - legacy v2.5 (deprecated)
+    - legacy v1.0 (deprecated)
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: >-
+    Older documentation sets (v1.0, v2.5, v3.0) are explicitly labeled
+    "deprecated" and relevant only to existing users; no formal RFC 8594
+    deprecation-header policy is published.
+sla:
+  url: null
+status_page: null
+notes: >-
+  Ranger ships a self-updating CLI (`ranger update`) rather than a versioned
+  public HTTP API; no public status page or SLA page was found.

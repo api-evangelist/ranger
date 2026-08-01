@@ -1,0 +1,49 @@
+generated: '2026-07-20'
+method: searched
+source: https://login.ranger.net/.well-known/openid-configuration
+docs: https://docs.ranger.net/reference/cli-overview/
+summary:
+  types: [oauth2, openIdConnect, apiKey]
+  oauth2_flows: [authorizationCode, clientCredentials, deviceCode, refreshToken]
+  api_key_in: [environment]
+issuer: https://login.ranger.net
+oidc:
+  discovery: https://login.ranger.net/.well-known/openid-configuration
+  authorization_endpoint: https://login.ranger.net/oauth2/authorize
+  token_endpoint: https://login.ranger.net/oauth2/token
+  device_authorization_endpoint: https://login.ranger.net/oauth2/device_authorization
+  introspection_endpoint: https://login.ranger.net/oauth2/introspection
+  userinfo_endpoint: https://login.ranger.net/oauth2/userinfo
+  jwks_uri: https://login.ranger.net/oauth2/jwks
+  grant_types_supported:
+  - authorization_code
+  - client_credentials
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:device_code
+  response_types_supported: [code]
+  id_token_signing_alg_values_supported: [RS256]
+  token_endpoint_auth_methods_supported: [none, client_secret_basic, client_secret_post]
+schemes:
+- name: oauth2-oidc
+  type: openIdConnect
+  description: >-
+    Browser-based OAuth 2.0 / OIDC login is the default. The Ranger CLI opens a
+    browser to authenticate and refreshes tokens automatically. Device-code and
+    client-credentials grants support headless / CI use.
+  sources: [https://login.ranger.net/.well-known/openid-configuration]
+- name: api-token
+  type: apiKey
+  in: environment
+  parameter: RANGER_CLI_TOKEN
+  description: >-
+    For CI / scripted / background-agent use, pass an API token (`ranger setup
+    <token>`) or set the RANGER_CLI_TOKEN environment variable; the CLI reads it
+    automatically.
+  sources: [https://docs.ranger.net/reference/cli-overview/]
+- name: mcp-delegated
+  type: oauth2
+  description: >-
+    The CLI can bootstrap auth via an MCP auth server (`ranger setup
+    --mcp-bootstrap`, RANGER_MCP_AUTH_URL) so managed agent platforms and
+    MCP-compatible tools can act on a real user's behalf without browser login.
+  sources: [https://docs.ranger.net/reference/cli-overview/]

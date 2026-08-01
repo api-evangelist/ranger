@@ -1,0 +1,18 @@
+# Feature Review
+
+> Automated browser verification and feature review for AI-assisted development.
+
+## Documentation Sets
+
+- [Abridged documentation](https://docs.ranger.net/llms-small.txt): a compact version of the documentation for Feature Review, with non-essential content removed
+- [Complete documentation](https://docs.ranger.net/llms-full.txt): the full documentation for Feature Review
+- [Current docs (v2.5)](https://docs.ranger.net/_llms-txt/current-docs-v25.txt): Use these for all new implementations.
+- [Alpha docs (main branch)](https://docs.ranger.net/_llms-txt/alpha-docs-main-branch.txt): Documentation for pre-release / alpha CLI features.
+- [Legacy docs (v2.5, deprecated)](https://docs.ranger.net/_llms-txt/legacy-docs-v25-deprecated.txt): Only relevant for existing v2.5 users.
+- [Legacy docs (v3.0, deprecated)](https://docs.ranger.net/_llms-txt/legacy-docs-v30-deprecated.txt): Only relevant for existing v3.0 users.
+- [Legacy docs (v1.0, deprecated)](https://docs.ranger.net/_llms-txt/legacy-docs-v10-deprecated.txt): Only relevant for existing v1.0 users.
+
+## Notes
+
+- The complete documentation includes all content from the official documentation
+- The content is automatically generated from the same source as the official documentation
