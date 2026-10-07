@@ -1,0 +1,37 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.ranger.net/pricing
+sources:
+- https://www.ranger.net/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Three tiers; only Growth has a numeric price ($50/month/user). Enterprise is usage-based, contact
+  sales.
+plan_count: 3
+currency: USD
+plans:
+- name: Free Forever
+  price_text: Free Forever
+  period: none
+  included_quota: 5 reviews, Self-serve install
+- name: Growth
+  price_text: $50/month/user
+  price: 50
+  currency: USD
+  period: month
+  unit: user
+  included_quota: Unlimited reviews, Self-serve install, Support via Slack or Email
+- name: Enterprise
+  price_text: Contact Sales
+  period: none
+  included_quota: Usage Based, Custom onboarding, Support via Slack or Email
